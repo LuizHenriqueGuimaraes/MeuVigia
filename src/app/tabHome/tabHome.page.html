@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Home
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list lines="none">
+    <ion-item *ngFor="let p of problemas; let i = index" (click)="openArticle(i)">
+      <ion-card>
+        <ion-card-header>
+          <ion-grid>
+            <ion-row>
+              <ion-col size="3" class="date-label" style="font-size: 35px;">
+                <ion-icon name="pin" color="danger"></ion-icon>
+              </ion-col>
+              <ion-col size="9">
+                <ion-row style="font-weight: bold;font-size: 15px">
+                  {{ p.endereco }}
+                </ion-row>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-card-header>
+        <ion-img [src]="p.thumbnail"></ion-img>
+        <ion-card-content>
+          <ion-grid>
+            <ion-row>
+              <ion-col size="3">
+                  <ion-icon name="warning" style="font-size: 30px" color="danger"></ion-icon> 
+              </ion-col>
+              <ion-col size="9">
+                  <ion-icon float-right name="share" style="font-size: 30px" color="danger"></ion-icon>
+              </ion-col>
+          </ion-row>
+          <ion-row style="font-weight: bold">
+            {{ p.numAlertas }} alertas
+          </ion-row>
+          </ion-grid>
+          <p>{{ p.text }} 
+          </ion-card-content>
+      </ion-card>
+    </ion-item>
+  </ion-list>
+</ion-content>

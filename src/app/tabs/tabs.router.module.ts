@@ -8,42 +8,51 @@ const routes: Routes = [
     component: TabsPage,
     children: [
       {
-        path: 'tab1',
+        path: 'tabHome',
         children: [
           {
             path: '',
-            loadChildren: '../tab1/tab1.module#Tab1PageModule'
+            loadChildren: '../tabHome/tabHome.module#TabHomePageModule'
           }
         ]
       },
       {
-        path: 'tab2',
+        path: 'tabEnviar',
         children: [
           {
             path: '',
-            loadChildren: '../tab2/tab2.module#Tab2PageModule'
+            loadChildren: '../tabEnviar/tabEnviar.module#TabEnviarPageModule'
           }
         ]
       },
       {
-        path: 'tab3',
+        path: 'tabMensagem',
         children: [
           {
             path: '',
-            loadChildren: '../tab3/tab3.module#Tab3PageModule'
+            loadChildren: '../tabMensagem/tabMensagem.module#TabMensagemPageModule'
+          }
+        ]
+      },
+      {
+        path: 'tabPerfil',
+        children: [
+          {
+            path: '',
+            loadChildren: '../tabPerfil/tabPerfil.module#TabPerfilPageModule'
           }
         ]
       },
       {
         path: '',
-        redirectTo: '/tabs/tab1',
+        redirectTo: '/tabs/tabHome',
         pathMatch: 'full'
       }
     ]
   },
   {
     path: '',
-    redirectTo: '/tabs/tab1',
+    redirectTo: '/tabs/tabHome',
     pathMatch: 'full'
   }
 ];
