@@ -6,4 +6,16 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content></ion-content>
+<ion-content>
+  <ion-item>
+    <ion-label position="stacked">Descrição</ion-label>
+    <ion-textarea></ion-textarea>
+  </ion-item>
+
+  <ion-card style="height: 300px;">
+    <ion-item>
+      <ion-input type="text" placeholder="Digite o CEP"></ion-input>
+    </ion-item>
+    <div #Map class="map"></div>
+  </ion-card>
+</ion-content>

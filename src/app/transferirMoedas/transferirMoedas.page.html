@@ -1,0 +1,78 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Transferir Moedas</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list lines="none">
+    <ion-card>
+      <ion-card-header style="font-weight: bold;">
+        Dados
+      </ion-card-header>
+      <ion-card-content>
+        <ion-grid>
+          <ion-row>
+            <ion-col size="12" style="font-size: 20px">
+              Luiz Henrique Guimarães
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col size = "4" style="font-size: 17px">
+              CPF:
+            </ion-col>
+            <ion-col size = "8" style="font-size: 17px">
+              123.456.789-00
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col size = "4" style="font-size: 17px">
+              Agência:
+            </ion-col>
+            <ion-col size = "8" style="font-size: 17px">
+              0123
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col size = "4" style="font-size: 17px">
+              Conta:
+            </ion-col>
+            <ion-col size = "8" style="font-size: 17px">
+              56789-0
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-card-content>
+    </ion-card>
+    <ion-card>
+      <ion-card-header style="font-weight: bold;">
+        Valor
+      </ion-card-header>
+      <ion-card-content>
+        <ion-grid>
+          <ion-row>
+            <ion-col float-right size="6">
+              <ion-icon name="cash" item-start></ion-icon>
+              1 moeda = R$ 0,50
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-item>
+              <ion-label stacked>Quantidade</ion-label>
+              <ion-input type="number" [(ngModel)]="transferirMoedas.quantidade"></ion-input>
+            </ion-item>
+          </ion-row>
+          <ion-row>
+            <ion-col size = "4" style="font-size: 17px">
+              Total:
+            </ion-col>
+            <ion-col size = "8" style="font-size: 17px">
+              {{ calcularValor(transferirMoedas.quantidade) | currency: "BRL" }}
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-card-content>
+    </ion-card>
+    <ion-button expand="block" color="primary" (click)="transferir()">Transferir</ion-button>
+  </ion-list>
+</ion-content>
