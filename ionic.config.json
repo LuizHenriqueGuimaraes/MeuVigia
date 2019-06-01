@@ -1,0 +1,7 @@
+{
+  "name": "MeuVigia",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}
