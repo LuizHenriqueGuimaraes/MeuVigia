@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { NavController, AlertController } from '@ionic/angular';
+import { AlertController } from '@ionic/angular';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-transferirMoedas',
@@ -10,7 +11,7 @@ export class TransferirMoedasPage implements OnInit {
 
   transferirMoedas: any = {};
 
-  constructor(public alertController: AlertController, public navController: NavController) { }
+  constructor(private alertController: AlertController, private router: Router) { }
 
   ngOnInit() {
     this.transferirMoedas = {
@@ -30,7 +31,7 @@ export class TransferirMoedasPage implements OnInit {
         {
           text: 'OK',
           handler: () => {
-            this.navController.pop();
+            this.router.navigate(['/tabs/tabPerfil']);
           }
         }
       ]

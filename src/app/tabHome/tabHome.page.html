@@ -8,7 +8,7 @@
 
 <ion-content>
   <ion-list lines="none">
-    <ion-item *ngFor="let p of problemas; let i = index" (click)="openArticle(i)">
+    <ion-item *ngFor="let p of problemas; let i = index">
       <ion-card>
         <ion-card-header>
           <ion-grid>
@@ -42,7 +42,7 @@
             {{ p.numAlertas }} alertas
           </ion-row>
           </ion-grid>
-          <p>{{ p.text }} 
+          <p>{{ p.descricao }} 
           </ion-card-content>
       </ion-card>
     </ion-item>

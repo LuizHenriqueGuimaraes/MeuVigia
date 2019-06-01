@@ -8,8 +8,8 @@
 
 <ion-content>
   <ion-item>
-    <ion-label position="stacked">Descrição</ion-label>
-    <ion-textarea></ion-textarea>
+    <ion-label position="stacked" style="font-size: 20px" >Descrição</ion-label>
+    <ion-textarea [(ngModel)]="problema.descricao"></ion-textarea>
   </ion-item>
 
   <ion-card style="height: 300px;">
@@ -18,4 +18,29 @@
     </ion-item>
     <div #Map class="map"></div>
   </ion-card>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-button color="light" expand="block">
+          <ion-icon slot="start" name="map"></ion-icon>
+          Local
+        </ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button color="light" expand="block">
+          <ion-icon slot="start" name="folder"></ion-icon>
+          Arquivo
+        </ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-button color="primary" expand="block" (click)="enviarProblema()">
+          <ion-icon slot="start" name="checkmark"></ion-icon>
+          Enviar
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>

@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Cadastro</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-icon name="arrow-round-back" style="font-size: 30px" color="dark" [routerLink]="['/login']" routerDirection="back"></ion-icon>
+  <ion-list>
+    <ion-item>
+      <ion-label position="stacked" style="font-size: 20px">Nome</ion-label>
+      <ion-input type="text" [(ngModel)]="userData.nome"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked" style="font-size: 20px">CPF</ion-label>
+      <ion-input type="number" [(ngModel)]="userData.cpf"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked" style="font-size: 20px">Senha</ion-label>
+      <ion-input type="password" [(ngModel)]="userData.senha"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked" style="font-size: 20px">Confirmar Senha</ion-label>
+      <ion-input type="password" [(ngModel)]="userData.confirmarSenha"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked" style="font-size: 20px">Email</ion-label>
+      <ion-input type="email" [(ngModel)]="userData.email"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked" style="font-size: 20px">Conta</ion-label>
+      <ion-input type="number" [(ngModel)]="userData.conta"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked" style="font-size: 20px">Agência</ion-label>
+      <ion-input type="number" [(ngModel)]="userData.agencia"></ion-input>
+    </ion-item>
+  </ion-list>
+  <ion-button expand="block" color="primary" (click)="cadastrar()">Cadastrar</ion-button>
+</ion-content>

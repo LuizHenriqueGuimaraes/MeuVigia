@@ -4,7 +4,8 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content padding>
+  <ion-icon name="arrow-round-back" style="font-size: 30px" color="dark" [routerLink]="['/tabs/tabPerfil']" routerDirection="back"></ion-icon>
   <ion-list lines="none">
     <ion-card>
       <ion-card-header style="font-weight: bold;">
@@ -51,7 +52,7 @@
       <ion-card-content>
         <ion-grid>
           <ion-row>
-            <ion-col float-right size="6">
+            <ion-col float-right size="12">
               <ion-icon name="cash" item-start></ion-icon>
               1 moeda = R$ 0,50
             </ion-col>
