@@ -1,0 +1,98 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>resolverProblema</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label position="stacked" style="font-weight: bold; font-size: 25px">Descrição:</ion-label>
+    <ion-textarea rows="8"></ion-textarea>
+  </ion-item>
+
+  <ion-item>
+    <ion-row>
+      <ion-col size="2">
+        <ion-icon name="time" item-start style="font-size: 30px"></ion-icon>
+      </ion-col>
+      <ion-col size="10">
+        A resolução do problema está em andamento.
+      </ion-col>
+    </ion-row>
+  </ion-item>
+  <ion-item>
+    <ion-row>
+      <ion-col size="2">
+        <ion-icon name="happy" item-start style="font-size: 30px"></ion-icon>
+      </ion-col>
+      <ion-col size="10">
+        O problema enviado já foi resolvido.
+      </ion-col>
+    </ion-row>
+  </ion-item>
+  <ion-item>
+    <ion-row>
+      <ion-col size="2">
+        <ion-icon name="sad" item-start style="font-size: 30px"></ion-icon>
+      </ion-col>
+      <ion-col size="10">
+        O problema enviado foi indefirido.
+      </ion-col>
+    </ion-row>
+  </ion-item>
+
+  <ion-list lines="none">
+    <ion-card>
+      <ion-card-header style="font-weight: bold;">
+        Nível do problema:
+      </ion-card-header>
+      <ion-card-content>
+        <ion-grid>
+          <ion-item>
+            <ion-row align-items-center>
+              <ion-col size="1">
+              </ion-col>
+              <ion-col size="2">
+                <ion-icon name="warning" item-start style="font-size: 30px"></ion-icon>
+              </ion-col>
+              <ion-col size="2">
+                <ion-icon name="warning" item-start style="font-size: 30px"></ion-icon>
+              </ion-col>
+              <ion-col size="2">
+                <ion-icon name="warning" item-start style="font-size: 30px"></ion-icon>
+              </ion-col>
+              <ion-col size="2">
+                <ion-icon name="warning" item-start style="font-size: 30px"></ion-icon>
+              </ion-col>
+              <ion-col size="2">
+                <ion-icon name="warning" item-start style="font-size: 30px"></ion-icon>
+              </ion-col>
+              <ion-col size="1">
+              </ion-col>
+            </ion-row>
+          </ion-item>
+        </ion-grid>
+      </ion-card-content>
+    </ion-card>
+  </ion-list>
+
+  <ion-item>
+    
+      <ion-col size="8">
+        <ion-button color="light">
+          <ion-icon name="home" style="font-size: 30px" color="dark"></ion-icon>
+          home
+        </ion-button>
+      </ion-col>
+      <ion-col size="4">
+        <ion-button color="light">
+          <ion-icon float-right name="checkmark" style="font-size: 30px" color="dark"></ion-icon>
+          Enviar
+        </ion-button>
+      </ion-col>
+
+
+    
+  </ion-item>
+
+</ion-content>
