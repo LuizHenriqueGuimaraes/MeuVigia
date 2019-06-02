@@ -11,7 +11,7 @@ export class TransferirMoedasPage implements OnInit {
 
   transferirMoedas: any = {};
 
-  constructor(private alertController: AlertController, private router: Router) { }
+  constructor(private alert: AlertController, private router: Router) { }
 
   ngOnInit() {
     this.transferirMoedas = {
@@ -24,7 +24,7 @@ export class TransferirMoedasPage implements OnInit {
   }
 
   async criarAlerta(){
-    const alert = await this.alertController.create({
+    const alert = await this.alert.create({
       header: 'Sucesso!',
       message: 'A transferência foi realizada com sucesso!',
       buttons: [
