@@ -168,10 +168,11 @@ export class TabEnviarPage {
 
   enviarProblema(){
     this.problema.numAlertas = 1;
+    this.problema.endereco = "Av: Dom José Gaspar, 500 Coração Eucarístico - Belo Horizonte - MG";
     if(this.problema.descricao){
       if(this.problema.thumbnail){
         this.storage.get('problemas').then((val) => {
-          val.push(this.problema);
+          val.unshift(this.problema);
           console.log(val);
           this.storage.set('problemas', val).then((val) => {
             this.problema = {};

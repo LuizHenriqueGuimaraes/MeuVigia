@@ -80,20 +80,17 @@
   <ion-item>
     
       <ion-col size="8">
-        <ion-button color="light">
+        <ion-button color="light" [routerLink]="['/tabs/tabHome']" routerDirection="back">
           <ion-icon name="home" style="font-size: 30px" color="dark"></ion-icon>
-          home
+          Home
         </ion-button>
       </ion-col>
       <ion-col size="4">
-        <ion-button color="light">
+        <ion-button color="light" [routerLink]="['/tabs/tabHome']" routerDirection="back">
           <ion-icon float-right name="checkmark" style="font-size: 30px" color="dark"></ion-icon>
           Enviar
         </ion-button>
       </ion-col>
-
-
-    
   </ion-item>
 
 </ion-content>
