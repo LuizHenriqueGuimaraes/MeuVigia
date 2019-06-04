@@ -26,7 +26,7 @@ export class TabEnviarPage {
   location = {lat: null, lng: null};
   markerOptions: any = {position: null, map: null, title: null};
   marker: any;
-  apiKey: any = 'AIzaSyAgF7Et3nOUw2cnWOOARpZgtVdSvnC3EM0'; /*Your API Key*/
+  apiKey: any = 'APIKEY'; /*Your API Key*/
 
   constructor(private storage: Storage, private router: Router, private toastController: ToastController, 
               private geolocation: Geolocation, private camera: Camera,
