@@ -26,7 +26,9 @@ export class LoginPage implements OnInit {
 
   async login(){
     if (this.userData.usuario == "admin" && this.userData.senha == "admin"){
-      this.userData.moedas = 100;
+      this.userData.moedas = 1000;
+      this.userData.vigia = true;
+      this.userData.agente = true;
       this.storage.set('usuario', this.userData).then((val) => {
         this.userData = {};
         this.redirect();

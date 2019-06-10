@@ -6,12 +6,12 @@
       <ion-label>Home</ion-label>
     </ion-tab-button>
 
-    <ion-tab-button tab="tabEnviar">
+    <ion-tab-button tab="tabEnviar" *ngIf="userData.vigia">
       <ion-icon name="cloud-upload"></ion-icon>
       <ion-label>Enviar</ion-label>
     </ion-tab-button>
 
-    <ion-tab-button tab="tabMensagem">
+    <ion-tab-button tab="tabMensagem" *ngIf="userData.vigia">
       <ion-icon name="chatbubbles"></ion-icon>
       <ion-label>Mensagens</ion-label>
     </ion-tab-button>

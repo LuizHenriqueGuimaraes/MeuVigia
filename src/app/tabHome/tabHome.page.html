@@ -8,7 +8,11 @@
 
 <ion-content>
   <ion-list lines="none">
-    <ion-item *ngFor="let p of problemas; let i = index">
+    <ion-searchbar [(ngModel)]="terms" placeholder="Pesquisar"></ion-searchbar>
+    <ion-button color="primary" expand="block" (click)="ordenar()">
+        Ordenar
+    </ion-button>
+    <ion-item *ngFor="let p of problemas | search : terms | sort: {property: column, order: order}">
       <ion-card>
         <ion-card-header>
           <ion-grid>
@@ -34,8 +38,8 @@
               <ion-col size="7">
                   <ion-icon float-right name="share" style="font-size: 30px" color="dark"></ion-icon>
               </ion-col>
-              <ion-col size="2">
-                  <ion-icon float-right name="construct" style="font-size: 30px" color="success" routerLink="/resolverProblema" routerDirection="forward"></ion-icon>
+              <ion-col size="2" *ngIf="userData.agente">
+                  <ion-icon float-right name="construct" style="font-size: 30px" color="success" (click)="resolverProblema(p)"></ion-icon>
               </ion-col>
           </ion-row>
           <ion-row style="font-weight: bold">

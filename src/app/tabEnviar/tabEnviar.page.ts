@@ -169,6 +169,7 @@ export class TabEnviarPage {
   enviarProblema(){
     this.problema.numAlertas = 1;
     this.problema.endereco = "Av: Dom José Gaspar, 500 Coração Eucarístico - Belo Horizonte - MG";
+    this.problema.resolvido = false;
     if(this.problema.descricao){
       if(this.problema.thumbnail){
         this.storage.get('problemas').then((val) => {

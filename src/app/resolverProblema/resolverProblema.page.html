@@ -77,20 +77,14 @@
     </ion-card>
   </ion-list>
 
-  <ion-item>
-    
-      <ion-col size="8">
-        <ion-button color="light" [routerLink]="['/tabs/tabHome']" routerDirection="back">
-          <ion-icon name="home" style="font-size: 30px" color="dark"></ion-icon>
-          Home
-        </ion-button>
-      </ion-col>
-      <ion-col size="4">
-        <ion-button color="light" [routerLink]="['/tabs/tabHome']" routerDirection="back">
-          <ion-icon float-right name="checkmark" style="font-size: 30px" color="dark"></ion-icon>
-          Enviar
-        </ion-button>
-      </ion-col>
-  </ion-item>
+  <ion-button color="light" expand="block" [routerLink]="['/tabs/tabHome']" routerDirection="back">
+    <ion-icon name="home" style="font-size: 30px" color="dark"></ion-icon>
+    Home
+  </ion-button>
+  
+  <ion-button color="primary" expand="block" (click)="resolverProblema()" [routerLink]="['/tabs/tabHome']" routerDirection="back">
+    <ion-icon float-right name="checkmark" style="font-size: 30px"></ion-icon>
+    Enviar
+  </ion-button>
 
 </ion-content>

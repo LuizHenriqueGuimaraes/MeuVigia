@@ -13,7 +13,7 @@
               <ion-icon name="person" style="font-size: 50px" item-start></ion-icon>
           </ion-col>
           <ion-col size = "9" style="font-size: 17px">
-            Luiz Henrique Guimarães
+            <span [innerHTML]="userData.nome"></span> 
           </ion-col>
         </ion-row>
         <ion-row>
@@ -21,7 +21,7 @@
             <ion-icon name="cash" style="font-size: 50px" item-start></ion-icon>
           </ion-col>
           <ion-col size = "6" style="font-size: 17px">
-            1000,00 moedas
+              <span [innerHTML]="userData.moedas"></span> moedas
           </ion-col>
         </ion-row>
         <ion-row>

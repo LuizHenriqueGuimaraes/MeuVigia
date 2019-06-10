@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AlertController } from '@ionic/angular';
 import { Router } from '@angular/router';
+import { Storage } from '@ionic/storage';
+import { ToastController } from '@ionic/angular';
 
 @Component({
   selector: 'app-transferirMoedas',
@@ -9,18 +11,37 @@ import { Router } from '@angular/router';
 })
 export class TransferirMoedasPage implements OnInit {
 
+  userData: any = {};
   transferirMoedas: any = {};
 
-  constructor(private alert: AlertController, private router: Router) { }
+  constructor(private alert: AlertController, private router: Router, private storage: Storage, private toastController: ToastController) { }
 
   ngOnInit() {
     this.transferirMoedas = {
       quantidade: 0
     };
+
+    this.storage.get('usuario').then((val) => {
+      this.userData = val;
+    });
   }
 
   calcularValor(valor){
     return (valor * 0.5);
+  }
+  
+  transferir(){
+    var quantidade = this.transferirMoedas.quantidade;
+
+    if(quantidade > this.userData.moedas){
+      this.toastErro("Moedas insuficientes!");
+    }
+    else{
+      this.userData.moedas = this.userData.moedas - quantidade;
+      this.storage.set('usuario', this.userData).then((val) => {
+        this.criarAlerta();
+      });
+    }
   }
 
   async criarAlerta(){
@@ -39,9 +60,14 @@ export class TransferirMoedasPage implements OnInit {
   
     await alert.present();
   }
-  
-  transferir(){
-    var quantidade = this.transferirMoedas.quantidade;
-    this.criarAlerta();
+
+  async toastErro(mensagem){
+    const toast = await this.toastController.create({
+      message: mensagem,
+      duration: 3000,
+      position: 'bottom'
+    });
+
+    toast.present();
   }
 }

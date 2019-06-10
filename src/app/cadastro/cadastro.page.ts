@@ -19,6 +19,11 @@ export class CadastroPage implements OnInit {
   }
 
   cadastrar(){
+    if(this.userData.tipoUsuario == "agente")
+      this.userData.agente = true;
+    else
+      this.userData.vigia = true;
+
     if(this.userData.senha == this.userData.confirmarSenha){
       this.userData.moedas = 100;
       this.storage.set('usuario', this.userData).then((val) => {

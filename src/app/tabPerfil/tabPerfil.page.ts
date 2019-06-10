@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Storage } from '@ionic/storage';
 
 @Component({
   selector: 'app-tabPerfil',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TabPerfilPage implements OnInit {
 
-  constructor() { }
+  userData: any = {};
+
+  constructor(private storage: Storage) { }
 
   ngOnInit() {
+    this.storage.get('usuario').then((val) => {
+      this.userData = val;
+    });
   }
 
 }
